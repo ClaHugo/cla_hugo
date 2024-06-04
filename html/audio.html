@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voz</title>
+</head>
+<body>
+    <input type="text" id="texto">
+    <button onclick="fala()">Diz</button>
+    <p id="p"></p>
+    <script>
+        function fala(){
+            let texto = document.getElementById("texto").value
+            const speech = new SpeechSynthesisUtterance()
+            speech.text = `Atenção, Olá, ${texto}`
+            speech.lang="en"
+            window.speechSynthesis.speak(speech)
+            document.getElementById("p").innerHTML = ` Atenção Olá  ${texto}`
+             
+        }
+    </script>
+</body>
+</html>

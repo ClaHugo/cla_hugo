@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   main{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: rgb(59, 80, 61);
+  
+  }
+  
+  .container{
+    display: flex;
+    flex-direction: column;
+    background: rgb(134, 226, 126);
+    width: 500px;
+    height: 600px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(3, 0, 0);
+  }
+  
+  .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    font: bold 2.5rem serif;
+    border-bottom: solid 5px rgb(20, 187, 90);
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    display: flex;
+    width: 300px;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(121, 156, 187);
+  }
+  .input input {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border:none;
+    outline: 0;
+    font: bold 1.5rem serif;
+    text-align: center;
+    color: #325521;
+  }
+  
+  .input label {
+    font: bold 1.5rem serif;
+    color: #255224;
+  }
+  
+  button{
+    width: 300px;
+    height: 40px;
+    font: bold 1.2rem serif;
+    background: #33d601;
+    color: rgb(33, 90, 31);
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .result{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    width: 300px;
+    height: 150px;
+    border-radius: 5px;
+    font: italic 1.5rem serif;
+    box-shadow: 0px 0px 10px rgb(7, 51, 3);
+    background: #257a22;
+    color: rgb(183, 248, 170);
+    padding: 20px;
+    box-sizing: border-box;
+    user-select: none;
+  }
+  body{
+    background: linear-gradient(10deg, lightblue,lightgreen,violet );
+  }
+    </style>
+</head>
+<body>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHzRJAYxdqW0da9exUSKwcoizA1gUjFuLTT3cMk2AC2QymbtPZAcoMXXKtw3npGNbUhzw&usqp=CAU" alt="imc">
+    <main>
+        <div class="container">
+          <div class="title"> Juros Compostos </div>
+          <br>
+          <div class="input">
+              <label>Valor : </label>
+              <input type="text" id='valori'>
+          </div>
+          <br>
+          <div class="input">
+              <label>Taxa:</label>
+              <input type="text" id='taxa'>
+          </div>
+          <br>
+          <div class="input">
+              <label>tempo:</label>
+              <input type="text" id='tempo'>
+          </div>
+          <br>
+          <button onclick="aperta()">Calcular</button>
+  
+          <div class="result" id='p'></div>
+        </div>
+        
+      </main>
+      
+
+    <script>
+        function aperta(){
+            let valo =  +document.getElementById("valori").value
+            let taxa =  +document.getElementById("taxa").value
+            let time =  +document.getElementById("tempo").value
+            let resultado = valo *(1+taxa)**time
+
+            document.getElementById("p").innerHTML= `R$${resultado}`
+
+        }
+    </script>
+</body>
+</html>

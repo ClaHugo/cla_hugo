@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oiii</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+        body{
+            height: 100vh;
+            background: linear-gradient(120deg, rgb(131, 214, 224),white, rgb(250, 173, 218));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .relogio { 
+            display: flex;
+            align-items: center;
+            justify-content:space-around ;
+            height: 200px;
+            width: 800px;
+            background: rgba(0, 0, 0, .0.1);
+            border-radius: 7px;
+            box-shadow: 0px 8px 10px rgb(6, 5, 5)  ;
+
+        }
+        .relogio div{
+            height: 170px;
+            width: 170px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background:linear-gradient(rgb(212, 129, 129), rgb(216, 29, 29), red);
+            box-shadow: 5px 5px 15px black, .7;
+            border-radius: 8px;
+            letter-spacing: 9px;
+            
+
+        }
+        .relogio span {
+            font-weight: bolder;
+            font-size: 78px;
+
+        }
+        .relogio span.tempo{
+            font-size: 10px;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div class="relogio">
+        <div>  
+         <span id="jam">00</span>
+         <span class="tempo">hora</span>
+        </div>
+    
+        <div>
+
+            <span id="menit">00</span>
+            <span class="tempo">minutos</span>
+        </div>
+    
+        <div>
+
+            <span id="detik">00</span>
+            <span class="tempo">segundos</span>
+        </div>
+        
+        <div>
+            
+            <span id="mile">00</span>
+            <span class="tempo">mile</span>
+          
+        </div>
+
+    </div>
+
+    
+    
+<script>
+    let jam = document.getElementById("jam")
+    let menit = document.getElementById('menit')
+    let detik = document.getElementById('detik')
+    let mile = document.getElementById('mile')
+
+    setInterval(function()  {
+        
+    
+        let waktu = new Date()
+        jam.textContent = waktu.getHours()
+        menit.textContent = waktu.getMinutes()
+        detik.textContent = waktu.getSeconds()
+        mile.textContent = waktu.getMilliseconds()
+    
+       
+    }) 
+
+    function converter (num) {
+            var dec = parseInt(num)
+            var bin = dec.toString(2)
+          document.getElementById("resultado").innerText=bin
+        }
+
+    
+</script>
+
+  
+    
+</body>
+ 
+</html>

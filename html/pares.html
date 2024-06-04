@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Fazer uma função que conte até 100 e mostre só os números pares</h1>
+    <p id="resposta"> revela</p>
+    <button onclick="soma()"> revela </button>
+
+ 
+</body>
+
+<script>
+    let pares = []
+     function soma(){
+            let contador= 0 
+            while(contador<=100){
+                if( contador %2 == 0){
+                    pares.push(contador)
+                    document.getElementById("resposta").innerHTML = ( "os numeros pares são " + pares)
+                }
+                contador++
+            }
+        }
+</script>
+
+</html>

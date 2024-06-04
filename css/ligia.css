@@ -1,0 +1,20 @@
+:root{
+    --fundo:linear-gradient(60deg,#db2777,#9333ea,#2563eb);
+}
+
+body{
+    display: flex;
+    width: 97vw;
+    height: 98vh;
+    justify-content: center;
+    align-items: center;
+    background-image: var(--fundo);
+}
+#caixinha{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    align-items: center;
+    align-self: center;
+  }
